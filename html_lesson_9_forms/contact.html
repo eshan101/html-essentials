@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+</head>
+<body>
+    <div>
+        <h1>Contact Me</h1>
+        <p>I'd really like to hear from you!</p>
+
+        <form action="https://httpbin.org/get" method="get">
+            <fieldset>
+                <legend>Personal Info</legend>
+            <!-- we are sending the form input to httpbin server just for testing purposes -->
+            <!-- method is the way we are sending, usually get or post -->
+            <!-- form usually contains label and input -->
+            <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Jane" autocomplete="on" required autofocus>
+        </div>
+            <!-- "for" of label should be exactly same as the "id" of input || "name" of input is used at server label for labeling the input -->
+
+            <!-- placeholder is used to give an example of the input -->
+
+            <!-- autocomplete saves the input and if you fill the form in future then it suggests the previous filled data -->
+
+            <!-- required is used when the form cannot be submitted without that filled -->
+
+            <!-- autofocus can only be used once is a form, it puts the blinking curson in the input field as the page loads -->
+            <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Silk" required>
+        </div>
+            <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Your Secret" required>
+        </div>
+        <div class="telephone">
+            <label for="phone">Phone :</label>
+            <input type="tel" name="phone" id="phone" placeholder="5555555555" pattern="[0-9]{10}" required>
+        </div>
+        
+        <div class="number">
+            <label for="decade">Favourite Decade:</label>
+            <input type="number" name="decade" id="decade" min="1950" max="2020" step="10" value="1980">
+        </div>
+
+        <div class="select">
+            <label for="coffee">Favourite Coffee:</label>
+            <select name="coffee" id="coffee" multiple size="5">
+                <!-- multiple will allow us to select multiple options and size is used to show number of items at -->
+                <optgroup label="Coffees">
+                <option value="regular">regular coffee</option>
+                <option value="iced coffee">Iced Coffee</option>
+            </optgroup>
+            <optgroup label="Espresso Drinks">
+                <option value="cappuccino">Cappuccino</option>
+                <option value="lattee">Lattee</option>
+                <option value="americano" selected>Americano</option>
+            </optgroup>
+                <option value="other">other</option>
+            </select>
+        </div>
+            
+        <div class="input_select">
+            <!-- Something similar to select can also be done using input and it even helps to type to search the list -->
+            <label for="coffee1">Favourite Coffee:</label>
+            <input type="text" name="coffee1" id="coffee1" list="coffee-list">
+            <datalist id="coffee-list">
+                <option value="coffee">
+                <option value="lattee">
+                <option value="espresso">
+                <option value="cortado">
+                <option value="americano">
+                <option value="other">
+            </datalist>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Favourite Food</legend>
+        <p>
+            <input type="radio" name="food" id="tacos" value="tacos">
+            <label for="tacos">tacos</label>
+        </p>
+        <p>
+            <input type="radio" name="food" id="pizza" value="pizza">
+            <label for="pizza">pizza</label>
+        </p>
+        <p>
+            <input type="radio" name="food" id="other" value="other">
+            <label for="other">other</label>
+        </p>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Do you have pets?</legend>
+        <p>
+            <input type="checkbox" name="pets" id="dog" value="dog">
+            <label for="dog">Dog</label>
+        </p>
+        <p>
+            <input type="checkbox" name="pets" id="cat" value="cat">
+            <label for="cat">Cat</label>
+        </p>
+        <p>
+            <input type="checkbox" name="pets" id="fish" value="fish">
+            <label for="fish">Fish</label>
+        </p>
+        <p>
+            <input type="checkbox" name="pets" id="otherPet" value="otherPet">
+            <label for="otherPet">otherPet</label>
+        </p>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Send me a note</legend>
+        <label for="message">Your Message:
+        </label>
+        <br>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message here"></textarea>
+    </fieldset>
+    <br>
+    <button type="submit">Submit</button>
+    <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post</button>
+    <button type="reset">Reset</button>
+    <!-- in get request all the info is shown in url so we should never use get to send sensitive info -->
+    <!-- post is more safe and stores the data in form while get stores it in args -->
+        </form>
+    </div>
+</body>
+</html>

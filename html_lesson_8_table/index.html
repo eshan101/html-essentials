@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        html{
+    font-size: 20px;
+}
+body{
+    background-color: #333;
+    color: whitesmoke;
+}
+table, tr, th, td, caption {
+    border:1px solid #eee;
+    font-family: 'Courier New', Courier, monospace;
+    border-collapse: collapse;
+    padding: 0.5rem;
+}
+    </style>
+</head>
+<body>
+    <div class="table">
+        <table>
+            <caption>My daily schedule</caption>
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <!-- scope defines where the th is focusing -->
+                    <th scope="col">Activity</th>
+                    <th scope="col">Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <th scope="row">Morning</th>
+                    <td>
+                    <time datetime="08:00">8am</time> - <time datetime="11:00">11am</time>
+                    </td>
+                    <td>
+                        Write Code
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" rowspan="2">break</th>
+                    <td>
+                        <time datetime="11:00">11am</time> - <time datetime="12:00">12pm</time>
+                    </td>
+                    <td>
+                        Eat Lunch
+                    </td>
+                    <tr>
+                        <td colspan="2">
+                            After That
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Afternoon</th>
+                        <td>Sleep</td>
+                        <td rowspan="2">All other time</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Night</th>
+                        <td>Repeat 🤣</td>
+                    </tr>
+
+            </tbody>  
+            <tfoot>
+                <tr>
+                    <td colspan="3">That's what I do daily: Eat Sleep Code Repeat</td>
+                </tr>
+            </tfoot>              
+        </table>
+    </div>
+    
+</body>
+</html>

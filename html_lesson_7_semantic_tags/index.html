@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semantic tags</title>
+    <link rel="stylesheet" href="dark.css" />
+  </head>
+  <body>
+    <header>
+      <h1></h1>
+      <nav aria-label="primary_nav">
+      </nav>
+      <!-- if u want two nav in a page then u can use aria-label to label them -->
+    </header>
+    <main>
+        <article></article> 
+        <section></section>
+        <!-- article and section both are almost same -->
+        <aside>
+            <details>
+                <summary>Guess the number of hours I code daily</summary>
+                <p>I start at <time datetime="08:00"> 8 am </time> and code for almost <mark> <time datetime="PT3H">5 hours </time> daily</mark></p>
+                <!-- time element is just to make the crawler easy to read your site -->
+                <!-- mark is used as a highlighter -->
+            </details>
+            <!-- this can be used as question answer element, pack of details, summary and p  -->
+        </aside> 
+        <!-- this is usually used to display something off topic, example - ads -->
+        <div>
+            <details>
+                <summary>Is div block element or inline element?</summary>
+                <p><mark>Block element</mark></p>
+            </details>
+        </div>
+        <span><details><summary>span is block element or inline?</summary>
+        <p><mark>Inline</mark></p>
+        </details></span>
+        <!-- try to use div and span less bcz they have no defined meaning for the assistive technologies(web crawlers) they are just used as dividers without giving any idea of the content inside them -->
+        <hr>
+    </main>
+    <footer></footer>
+    <!-- to check your html outline use the extension html outliner in the browser -->
+  </body>
+</html>
